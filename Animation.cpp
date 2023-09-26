@@ -29,6 +29,7 @@ int main() {
     std::vector<double> x = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 6.0,6.0,6.0,6.0,6.0,6.0,6.0, 5.0,4.0,3.0,2.0,1.0,0.0,-1.0,-2.0,-3.0,-4.0,-5.0,-6.0,-7.0,-7.0,-7.0,-7.0,-7.0,-7.0,-7.0,-7.0, -6.0,-5.0,-4.0,-3.0,-2.0};
     std::vector<double> y = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0,2.0,3.0,4.0,5.0,6.0,7.0, 7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0, 6.0,5.0,4.0,3.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0};
     vector<Eigen::VectorXd> waypoints;
+    
     // Interpolate waypoints using CubicSpline1D
     // Generating a list of indices for the waypoints:
     std::vector<double> t_values(x.size());
@@ -48,8 +49,13 @@ int main() {
         // y_new.push_back(spline_y.calc_der0(t));
     }
 
+    std::cout << "waypoints size: " << waypoints.size() << std::endl;
+
     // Plot interpolated waypoints
     plot_waypoints(waypoints);
+
+    // #print the size of waypoints
+    
 
 
 
